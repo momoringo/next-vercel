@@ -9,3 +9,5 @@ export const container = css`
   align-items: center;
   height: 100vh;
 `
+
+export default {}
