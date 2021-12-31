@@ -1,0 +1,19 @@
+name: deploy website
+
+on:
+  workflow_dispatch:
+  pull_request:
+    types:
+      [opened, reopened, synchronize]
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: amondnet/vercel-action@v20
+        with:
+          vercel-token: ${{ secrets.TOKEN }} # Required
+          vercel-args: '--prod' #Optional
+          vercel-org-id: ${{ secrets.OJ}}  #Required
+          vercel-project-id: ${{ secrets.PJ}} #Required 
+          working-directory: ./next-vercel
