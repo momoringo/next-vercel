@@ -6,7 +6,7 @@ import Image from 'next/image'
 const Home: NextPage = () => {
   return (
     <div>
-      テストです!!!!
+      複数プロジェクト
     </div>
   )
 }
