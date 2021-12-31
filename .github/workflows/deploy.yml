@@ -16,4 +16,3 @@ jobs:
           vercel-args: '--prod' #Optional
           vercel-org-id: ${{ secrets.OJ}}  #Required
           vercel-project-id: ${{ secrets.PJ}} #Required 
-          working-directory: ./next-vercel
