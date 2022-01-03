@@ -5,7 +5,7 @@ import {isEqual} from 'lodash'
 
 export const APOLLO_STATE_PROP_NAME = '__APOLLO_STATE__'
 
-let apolloClient
+let apolloClient: any
 
 
 export const cache = new InMemoryCache({
