@@ -8,6 +8,15 @@ const typeDefs = gql`
 
   type Query {
     getProducts: [Test]
+    test(id: Int!): Test
+  }
+
+  input TestInput {
+    id: ID
+  }
+
+  type Mutation {
+    newTest(input: TestInput): Test!
   }  
 `
 export default typeDefs

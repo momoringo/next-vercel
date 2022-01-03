@@ -30,7 +30,7 @@ const theme = createTheme({
 type Props = { tes: number }
 
 
-const Home: NextPage = (props) => {
+const About: NextPage = (props) => {
 
   const {loading, data, error} = useGetProductsQuery()
 
@@ -41,9 +41,7 @@ const Home: NextPage = (props) => {
   }, [])
   return (
     <div>
-    <ThemeProvider theme={theme}>
-      <Editor />
-    </ThemeProvider>
+      not found
     </div>
   )
 }
@@ -65,4 +63,4 @@ export async function getStaticProps() {
   }
 }
 
-export default Home
+export default About

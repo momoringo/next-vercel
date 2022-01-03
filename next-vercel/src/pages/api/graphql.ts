@@ -1,3 +1,4 @@
+import type { NextApiRequest, NextApiResponse } from 'next'
 import { ApolloServer, makeExecutableSchema } from 'apollo-server-micro'
 import typeDefs from '../../../db/schema'
 import resolvers from '../../../db/resolvers'
@@ -12,12 +13,8 @@ export const config = {
 };
 const apolloServer = new ApolloServer({ typeDefs, resolvers });
 const startServer = apolloServer.start();
-export default async function startFunction (req: any, res: any) {
+export default async function startFunction (req: NextApiRequest, res: NextApiResponse) {
   res.setHeader('Access-Control-Allow-Credentials', 'true');
-  res.setHeader(
-    'Access-Control-Allow-Origin',
-    'https://studio.apollographql.com'
-  );
   res.setHeader(
     'Access-Control-Allow-Headers',
     'Origin, X-Requested-With, Content-Type, Accept'

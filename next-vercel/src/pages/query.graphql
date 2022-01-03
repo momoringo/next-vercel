@@ -1,0 +1,13 @@
+query GetProducts {
+  activeUserId @client
+  getProducts {
+    id
+    name
+  }
+}
+
+mutation NewTest($input: TestInput!) {
+  newTest(input: $input) {
+    id
+  }
+}
