@@ -17,7 +17,7 @@ const resolvers = {
   },
 
   Mutation: {
-    newTest: async (_, { input }) => {
+    newTest: async (_: any, { input }: any) => {
       try {
         const test = new Test({name: 'test666'})
 
