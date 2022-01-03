@@ -13,7 +13,7 @@ const Editor: NextPage = () => {
   return (
     <div>
       <p css={screen}>エディター</p>
-      <Button color="third" variant="contained">Text</Button>
+      <Button variant="contained">Text</Button>
     </div>
   )
 }
