@@ -13,16 +13,7 @@ const resolvers = {
       } catch (err) {
         console.log(err)
       }
-    }, 
-    test: async () => {
-      const test = await Test.findById(id)
-
-      if (!product) {
-        throw new Error('Product not found')
-      }
-
-      return test
-    },     
+    }    
   },
 
   Mutation: {
