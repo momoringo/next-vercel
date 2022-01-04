@@ -57,10 +57,9 @@ const Home: NextPage<Props> = ({nextCreatedAt}: Props) => {
   )
 }
 
-export async function getStaticProps() {
-
 
   /*
+export async function getServerSideProps(context) {
   const apolloClient = initializeApollo()
 
 
@@ -69,9 +68,21 @@ export async function getStaticProps() {
     query: GetProductsDocument
   })
 
-  */
 
-    const apolloClient = initializeApollo()
+
+  return {
+    props: {
+      nextCreatedAt: data?.getProducts[0]?.name,
+    },
+  }
+}
+
+    */
+export async function getStaticProps() {
+
+
+
+  const apolloClient = initializeApollo()
 
 
 
@@ -80,13 +91,17 @@ export async function getStaticProps() {
   })
 
 
-console.log(data);
+
+
+
   return {
     props: {
       nextCreatedAt: data?.getProducts[0]?.name,
     },
     revalidate: intervalSecond,
   }
+
 }
+
 
 export default Home

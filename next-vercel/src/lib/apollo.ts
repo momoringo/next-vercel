@@ -24,7 +24,7 @@ export const cache = new InMemoryCache({
 
 function createApolloClient() {
   const link = createHttpLink({
-    uri: '//next-vercel-zukeyama-k.vercel.app/api/graphql'
+    uri: 'https://next-vercel-zukeyama-k.vercel.app/api/graphql'
   });
 
   return new ApolloClient({
@@ -37,7 +37,7 @@ function createApolloClient() {
 
 
 export function initializeApollo(initialState = null) {
-  const _apolloClient = createApolloClient()
+  const _apolloClient = apolloClient ?? createApolloClient()
 
   // If your page has Next.js data fetching methods that use Apollo Client, the initial state
   // gets hydrated here
