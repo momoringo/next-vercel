@@ -8,7 +8,7 @@ export const middleware = (req: NextRequest) => {
     const [user, pwd] = Buffer.from(auth, 'base64').toString().split(':')
 
     // basic認証のUser/Passが、envファイルにある値と同じかをチェック
-    if (user ===  process.env.NEXT_PUBLIC_USER && pwd === process.env.NEXT_PUBLIC_PASS) {
+    if (ip && ip === process.env.IP) {
       return NextResponse.next()
     }
   }
