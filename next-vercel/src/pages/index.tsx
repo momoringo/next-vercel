@@ -26,10 +26,10 @@ const theme = createTheme({
   },
 });
 
-type Props = { tes: number }
+type Props = { tes: string }
 
 
-const Home: NextPage = (props) => {
+const Home: NextPage<Props> = (props: Props) => {
 
      console.log(props)
   /*
