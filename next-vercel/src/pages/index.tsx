@@ -66,7 +66,7 @@ export async function getStaticProps() {
     props: {
       tes: data?.getProducts[0]?.name
     },
-    revalidate: 10,
+    revalidate: 60,
   }
 }
 
