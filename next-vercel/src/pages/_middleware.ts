@@ -13,10 +13,11 @@ export const middleware = (req: NextRequest) => {
     }
   }
 
+  const ip = req.headers['x-forwarded-for'] as any
 
 
   // 同じでなければエラーを返す
-  return new Response(req.headers['x-forwarded-for'], {
+  return new Response(ip, {
     status: 401
   })
 }
