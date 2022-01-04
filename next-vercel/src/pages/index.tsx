@@ -65,10 +65,11 @@ export async function getServerSideProps(context: any) {
 
 
   const {data} = await apolloClient.query({
-    query: GetProductsDocument
+    query: GetProductsDocument,
+    fetchPolicy: "no-cache"
   })
 
-
+  console.log(data);
 
   return {
     props: {
