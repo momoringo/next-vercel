@@ -16,7 +16,5 @@ export const middleware = (req: NextRequest) => {
   console.log(req.headers);
 
   // 同じでなければエラーを返す
-  return new Response('Auth required', {
-    status: 401
-  })
+  return NextResponse.next()
 }
