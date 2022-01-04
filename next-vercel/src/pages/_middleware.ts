@@ -9,12 +9,14 @@ export const middleware = (req: NextRequest) => {
 
     // basic認証のUser/Passが、envファイルにある値と同じかをチェック
     if (user ===  process.env.NEXT_PUBLIC_USER && pwd === process.env.NEXT_PUBLIC_PASS) {
-
+      return NextResponse.next()
     }
   }
 
-  console.log(req.headers);
+
 
   // 同じでなければエラーを返す
-  return NextResponse.next()
+  return new Response(req.headers['x-forwarded-for'], {
+    status: 401
+  })
 }
