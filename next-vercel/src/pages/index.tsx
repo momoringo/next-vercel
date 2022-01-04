@@ -58,7 +58,7 @@ const Home: NextPage<Props> = ({nextCreatedAt}: Props) => {
 }
 
 
-  /*
+
 export async function getServerSideProps(context) {
   const apolloClient = initializeApollo()
 
@@ -76,8 +76,8 @@ export async function getServerSideProps(context) {
     },
   }
 }
+  /*
 
-    */
 export async function getStaticProps() {
 
 
@@ -102,6 +102,6 @@ export async function getStaticProps() {
   }
 
 }
-
+    */
 
 export default Home
