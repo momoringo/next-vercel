@@ -57,36 +57,5 @@ const Home: NextPage<Props> = ({nextCreatedAt}: Props) => {
   )
 }
 
-export async function getStaticProps() {
-
-
-  /*
-  const apolloClient = initializeApollo()
-
-
-
-  const {data} = await apolloClient.query({
-    query: GetProductsDocument
-  })
-
-  */
-
-    const apolloClient = initializeApollo()
-
-
-
-  const {data} = await apolloClient.query({
-    query: GetProductsDocument
-  })
-
-
-
-  return {
-    props: {
-      nextCreatedAt: data?.getProducts[0]?.name,
-    },
-    revalidate: intervalSecond,
-  }
-}
 
 export default Home
