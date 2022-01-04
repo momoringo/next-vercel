@@ -73,12 +73,20 @@ export async function getStaticProps() {
 
   */
 
+    const apolloClient = initializeApollo()
+
+
+
+  const {data} = await apolloClient.query({
+    query: GetProductsDocument
+  })
+
       const date = new Date();
     const current = date.toLocaleString()
 
   return {
     props: {
-      nextCreatedAt: current,
+      nextCreatedAt: data?.getProducts[0]?.name,
     },
     revalidate: intervalSecond,
   }
