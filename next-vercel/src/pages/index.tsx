@@ -48,8 +48,6 @@ const Home: NextPage<Props> = ({nextCreatedAt}: Props) => {
     <div>
     <ThemeProvider theme={theme}>
       <Editor />
-      {process.env.VERCEL_ENV}
-
        <h1>
           {nextCreatedAt}
         </h1>
@@ -72,7 +70,7 @@ export async function getStaticProps() {
   })
 
   */
-/*
+
     const apolloClient = initializeApollo()
 
 
@@ -81,13 +79,11 @@ export async function getStaticProps() {
     query: GetProductsDocument
   })
 
-      const date = new Date();
-    const current = date.toLocaleString()
-    */
+
 
   return {
     props: {
-      nextCreatedAt: 99
+      nextCreatedAt: data?.getProducts[0]?.name,
     },
     revalidate: intervalSecond,
   }
