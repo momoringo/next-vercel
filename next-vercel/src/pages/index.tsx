@@ -3,10 +3,6 @@ import React, { useEffect } from "react";
 import Head from 'next/head'
 import Image from 'next/image'
 import dayjs from 'dayjs'
-const utc = require('dayjs/plugin/utc');
-const timezone = require('dayjs/plugin/timezone');
-dayjs.extend(utc);
-dayjs.extend(timezone);
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 import { red } from "@mui/material/colors";
 import Editor from '@/components/Editor'
@@ -35,7 +31,7 @@ const theme = createTheme({
 type Props = {nextCreatedAt:any }
 
 
-const Home: NextPage<Props> = ({ createdAt, nextCreatedAt}: Props) => {
+const Home: NextPage<Props> = ({nextCreatedAt}: Props) => {
 
     // console.log(props)
   /*
