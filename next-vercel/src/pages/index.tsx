@@ -57,7 +57,7 @@ const Home: NextPage<Props> = ({nextCreatedAt}: Props) => {
   )
 }
 
-
+  /*
 
 export async function getServerSideProps(context: any) {
   const apolloClient = initializeApollo()
@@ -77,7 +77,7 @@ export async function getServerSideProps(context: any) {
     },
   }
 }
-  /*
+    */
 
 export async function getStaticProps() {
 
@@ -88,7 +88,8 @@ export async function getStaticProps() {
 
 
   const {data} = await apolloClient.query({
-    query: GetProductsDocument
+    query: GetProductsDocument,
+    fetchPolicy: "no-cache"
   })
 
 
@@ -103,6 +104,6 @@ export async function getStaticProps() {
   }
 
 }
-    */
+
 
 export default Home
