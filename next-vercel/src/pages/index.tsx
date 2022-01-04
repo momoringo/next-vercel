@@ -47,6 +47,7 @@ const Home: NextPage<Props> = (props: Props) => {
     <ThemeProvider theme={theme}>
       <Editor />
       {props.tes}
+      {process.env.VERCEL_ENV}
     </ThemeProvider>
     </div>
   )
