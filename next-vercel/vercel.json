@@ -1,1 +1,16 @@
-{}
+{
+  "github": {
+    "enabled": false
+  },
+  "headers": [
+    {
+      "source": ".",
+      "headers": [
+        {
+          "key": "cache-control",
+          "value": "public, max-age=0, s-maxage=0, stale-while-revalidate=0, stale-if-error=0"
+        }
+      ]
+    }
+  ]  
+}
