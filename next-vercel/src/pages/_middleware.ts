@@ -17,7 +17,5 @@ export const middleware = (req: NextRequest) => {
 
 
   // 同じでなければエラーを返す
-  return new Response(ip, {
-    status: 401
-  })
+  return NextResponse.next()
 }
