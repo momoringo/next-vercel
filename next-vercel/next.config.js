@@ -6,9 +6,7 @@
     DOMAIN: process.env.DOMAIN,
     MONGODB_URI: process.env.MONGODB_URI
   },
-  async rewrites() {
-    return {}
-  }  
+
 }
 
 
