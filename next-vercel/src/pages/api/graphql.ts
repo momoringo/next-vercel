@@ -25,6 +25,6 @@ export default async function startFunction (req: NextApiRequest, res: NextApiRe
   }
   await startServer;
   await apolloServer.createHandler({
-    path: 'https://next-vercel-zukeyama-k.vercel.app/api/graphql',
+    path: '/api/graphql',
   })(req, res);
 }
