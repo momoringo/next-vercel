@@ -1,13 +1,12 @@
-declare module '@mui/material/styles' {
-  interface Theme {
-    palette: {
-      third: string;
-    };
+import { Theme, ThemeOptions } from "'@mui/material/styles";
+
+
+declare module "@mui/material/styles" {
+  interface Palette {
+    third: Palette["primary"];
   }
-  // allow configuration using `createTheme`
-  interface ThemeOptions {
-    palette?: {
-      third?: string;
-    };
+  interface PaletteOptions {
+    third?: PaletteOptions["primary"];
   }
 }
+
