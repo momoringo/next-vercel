@@ -72,7 +72,7 @@ export async function getStaticProps() {
   })
 
   */
-
+/*
     const apolloClient = initializeApollo()
 
 
@@ -83,10 +83,11 @@ export async function getStaticProps() {
 
       const date = new Date();
     const current = date.toLocaleString()
+    */
 
   return {
     props: {
-      nextCreatedAt: data?.getProducts[0]?.name,
+      nextCreatedAt: 99
     },
     revalidate: intervalSecond,
   }
