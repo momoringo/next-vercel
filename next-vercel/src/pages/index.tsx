@@ -32,7 +32,7 @@ const theme = createTheme({
   },
 });
 
-type Props = {createdAt: any, nextCreatedAt:any }
+type Props = {nextCreatedAt:any }
 
 
 const Home: NextPage<Props> = ({ createdAt, nextCreatedAt}: Props) => {
@@ -57,19 +57,14 @@ const Home: NextPage<Props> = ({ createdAt, nextCreatedAt}: Props) => {
        <h1>
           {nextCreatedAt}
         </h1>
-        <h2>HTML created time</h2>
-        <h1>
-          {createdAt}
-        </h1>      
+       
     </ThemeProvider>
     </div>
   )
 }
 
 export async function getStaticProps() {
-    const currentTime = dayjs().tz()
-  const createdAt = currentTime.format(formatStyle)
-  const nextCreatedAt = currentTime.add(intervalSecond, 's').format(formatStyle)
+
 
   /*
   const apolloClient = initializeApollo()
@@ -87,8 +82,7 @@ export async function getStaticProps() {
 
   return {
     props: {
-      createdAt,
-      nextCreatedAt,
+      nextCreatedAt: current,
     },
     revalidate: intervalSecond,
   }
