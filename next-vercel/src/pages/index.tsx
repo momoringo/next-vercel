@@ -9,7 +9,7 @@ import Editor from '@/components/Editor'
 import { useGetProductsQuery, GetProductsDocument } from '@/graphql'
 import { initializeApollo } from '@/lib/apollo'
 
-const intervalSecond = 20
+const intervalSecond = 60
 const formatStyle = "MM/DD HH:mm:ss"
 const theme = createTheme({
   palette: {
