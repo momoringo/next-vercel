@@ -8,16 +8,15 @@ export const middleware = (req: NextRequest) => {
     const [user, pwd] = Buffer.from(auth, 'base64').toString().split(':')
 
     // basic認証のUser/Passが、envファイルにある値と同じかをチェック
-    if (user ===  process.env.NEXT_PUBLIC_USER && pwd === process.env.NEXT_PUBLIC_PASS) {
+    const ip = req.headers.get('x-forwarded-for')
+    if (ip && ip === process.env.IP) {
       return NextResponse.next()
     }
   }
 
-  const ip = req.headers.get('x-forwarded-for')
-
 
   // 同じでなければエラーを返す
-  return new Response(ip, {
+  return new Response('not access', {
     status: 401
   })
 }
