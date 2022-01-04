@@ -8,7 +8,6 @@ const resolvers = {
     getProducts: async () => {
       try {
         const products = await Test.find({})
-        console.log(products);
         return products
       } catch (err) {
         console.log(err)

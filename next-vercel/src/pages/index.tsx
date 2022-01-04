@@ -31,9 +31,13 @@ type Props = { tes: number }
 
 const Home: NextPage = (props) => {
 
+     console.log(props)
+  /*
+
   const {loading, data, error} = useGetProductsQuery()
 
   console.log(data)
+  */
 
   useEffect(() => {
 
@@ -42,6 +46,7 @@ const Home: NextPage = (props) => {
     <div>
     <ThemeProvider theme={theme}>
       <Editor />
+      {props.tes}
     </ThemeProvider>
     </div>
   )
@@ -50,17 +55,17 @@ const Home: NextPage = (props) => {
 export async function getStaticProps() {
   const apolloClient = initializeApollo()
 
-  /*
+
 
   const {data} = await apolloClient.query({
     query: GetProductsDocument
   })
-*/
 
   return {
     props: {
-      tes: 88
-    }
+      tes: data?.getProducts[0]?.name
+    },
+    revalidate: 10,
   }
 }
 
