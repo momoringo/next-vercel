@@ -16,10 +16,6 @@ const startServer = apolloServer.start();
 export default async function startFunction (req: NextApiRequest, res: NextApiResponse) {
   res.setHeader('Access-Control-Allow-Credentials', 'true');
   res.setHeader(
-    'Access-Control-Allow-Origin',
-    'https://studio.apollographql.com'
-  );
-  res.setHeader(
     'Access-Control-Allow-Headers',
     'Origin, X-Requested-With, Content-Type, Accept'
   );
@@ -29,6 +25,6 @@ export default async function startFunction (req: NextApiRequest, res: NextApiRe
   }
   await startServer;
   await apolloServer.createHandler({
-    path: '/api/graphql',
+    path: 'https://next-vercel-zukeyama-k.vercel.app/api/graphql',
   })(req, res);
 }

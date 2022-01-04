@@ -80,7 +80,7 @@ export async function getStaticProps() {
   })
 
 
-
+console.log(data);
   return {
     props: {
       nextCreatedAt: data?.getProducts[0]?.name,
