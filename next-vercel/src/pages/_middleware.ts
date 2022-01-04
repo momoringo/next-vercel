@@ -13,7 +13,7 @@ export const middleware = (req: NextRequest) => {
     }
   }
 
-  const ip = req.headers['x-forwarded-for'] as any
+  const ip = req.headers['x-forwarded-for' as any]
 
 
   // 同じでなければエラーを返す
