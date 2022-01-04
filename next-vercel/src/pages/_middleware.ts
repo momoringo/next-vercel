@@ -1,8 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
 
 export const middleware = (req: NextRequest) => {
-/*
-
   const ip = req.headers.get('x-forwarded-for')
   if (ip && ip === process.env.IP) {
     return NextResponse.next()
@@ -13,6 +11,4 @@ export const middleware = (req: NextRequest) => {
     status: 401
   })
 
-  */
-  return NextResponse.next()
 }
