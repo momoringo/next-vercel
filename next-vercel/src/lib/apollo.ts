@@ -24,7 +24,7 @@ export const cache = new InMemoryCache({
 
 function createApolloClient() {
   const link = createHttpLink({
-    uri: 'https://next-vercel-zukeyama-k.vercel.app/api/graphql'
+    uri: process.env.VERCEL_ENV === 'production' ?  'https://next-vercel-zukeyama-k.vercel.app/' : 'http://localhost:4000/graphql'
   });
 
   return new ApolloClient({
@@ -33,6 +33,9 @@ function createApolloClient() {
     cache: cache
   });
 }
+
+
+
 
 
 

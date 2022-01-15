@@ -6,6 +6,10 @@
     DOMAIN: process.env.DOMAIN,
     MONGODB_URI: process.env.MONGODB_URI
   },
+  images: {
+    loader: 'imgix',
+    path: 'https://jamthomdev.imgix.net',
+  }  
 
 }
 

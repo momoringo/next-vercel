@@ -7,6 +7,17 @@ const resolvers = {
     // products
     getProducts: async () => {
       try {
+
+
+
+        //const test = new Test([{name: 'test666'}, {name: 'bbbbbbb'}])
+
+
+       //Test.insertMany([{name: 'test666'}, {name: 'bbbbbbb'}], function (err, mongooseDocuments) { /* Your callback function... */ });
+
+
+     //const result = await test.save()
+
         const products = await Test.find({})
         return products
       } catch (err) {

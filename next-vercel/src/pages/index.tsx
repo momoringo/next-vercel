@@ -1,5 +1,6 @@
 import type { NextPage } from 'next'
 import React, { useEffect } from "react";
+import { gql } from '@apollo/client';
 import Head from 'next/head'
 import Image from 'next/image'
 import dayjs from 'dayjs'
@@ -26,6 +27,9 @@ const theme = createTheme({
       main: red.A400,
     },
   },
+  button: {
+    textTransform: "none"
+  } 
 });
 
 type Props = {nextCreatedAt:any }
@@ -48,21 +52,18 @@ const Home: NextPage<Props> = ({nextCreatedAt}: Props) => {
     <div>
     <ThemeProvider theme={theme}>
       <Editor />
-       <h1>
+        <h1>
           {nextCreatedAt}
         </h1>
-       
     </ThemeProvider>
     </div>
   )
 }
 
-  /*
+/*
 
 export async function getServerSideProps(context: any) {
   const apolloClient = initializeApollo()
-
-
 
   const {data} = await apolloClient.query({
     query: GetProductsDocument,
@@ -79,30 +80,33 @@ export async function getServerSideProps(context: any) {
 }
     */
 
+const GET_DOGS = gql`
+query Enterprises {
+  enterprises {
+    id
+    name
+  }
+}
+`;    
+
 export async function getStaticProps() {
-
-
 
   const apolloClient = initializeApollo()
 
 
-
   const {data} = await apolloClient.query({
-    query: GetProductsDocument,
+    query: GET_DOGS,
     fetchPolicy: "no-cache"
   })
 
-
-
-
+console.log(data);
 
   return {
     props: {
-      nextCreatedAt: data?.getProducts[0]?.name,
+      nextCreatedAt: 'ff' //data?.getProducts[0]?.name,
     },
     revalidate: intervalSecond,
   }
-
 }
 
 

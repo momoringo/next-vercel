@@ -1,0 +1,16 @@
+{
+  "src": [
+    "./e2e/allScreen/*.test.ts",
+    "./e2e/login/*.test.ts",
+    "./e2e/item/*.test.ts",
+    "./e2e/packing/*.test.ts",
+    "./e2e/staff/*.test.ts",
+    "./e2e/staffGroup/*.test.ts",
+    "./e2e/deliveryCompany/*.test.ts",
+    "./e2e/warehouse/*.test.ts",
+    "./e2e/tax/*.test.ts"
+  ],
+  "selectorTimeout": 30000,
+  "pageLoadTimeout": 30000,
+  "speed": 1.0
+}
